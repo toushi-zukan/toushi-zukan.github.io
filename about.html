@@ -241,6 +241,35 @@ footer{border-top:1px solid var(--line)}
   -webkit-backdrop-filter:saturate(1.6) blur(14px)}
  .tabbar svg{stroke-width:1.6}
 }
+
+.chartbox{--s1:#2a78d6;--s2:#eb6834;--s3:#1baf7a;--s4:#eda100;--s5:#e87ba4;--sb:var(--ink);
+background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 16px 12px;margin:10px 0 18px;
+box-shadow:0 1px 2px rgba(16,24,40,.04)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .chartbox{--s1:#3987e5;--s2:#d95926;--s3:#199e70;--s4:#c98500;--s5:#d55181}}
+:root[data-theme="dark"] .chartbox{--s1:#3987e5;--s2:#d95926;--s3:#199e70;--s4:#c98500;--s5:#d55181}
+.chartbox .ct{font-weight:700;font-size:15px}.chartbox .cs{font-size:12px;color:var(--sub);margin:2px 0 10px}
+.chartbox .plot{position:relative;touch-action:pan-y;user-select:none;-webkit-user-select:none}
+svg.lc{display:block;overflow:visible}
+svg.lc .g{stroke:var(--line);stroke-width:1}svg.lc .g0{stroke:var(--sub);stroke-width:1;opacity:.55}
+svg.lc text{fill:var(--sub);font-size:11px;font-family:inherit;font-variant-numeric:tabular-nums}
+svg.lc path.s{fill:none;stroke-width:2;stroke-linejoin:round;stroke-linecap:round;transition:opacity .15s}
+svg.lc path.s.b{stroke-width:2.5;stroke-dasharray:5 4}
+svg.lc.hl path.s:not(.on){opacity:.12}
+svg.lc .xh{stroke:var(--sub);stroke-width:1;opacity:.6}
+svg.lc circle.d{stroke:var(--card);stroke-width:2}
+.chartbox .tip{position:absolute;top:0;pointer-events:none;background:var(--card);border:1px solid var(--line);
+border-radius:10px;padding:8px 10px;font-size:12px;box-shadow:0 6px 20px rgba(16,24,40,.14);min-width:150px;z-index:2}
+.chartbox .tip .h{color:var(--sub);margin-bottom:4px}
+.chartbox .tip .r{display:flex;align-items:center;gap:8px;line-height:1.7;white-space:nowrap}
+.chartbox .tip .r i,.chartbox .lg i{display:inline-block;width:14px;height:0;border-top:2.5px solid;border-radius:2px;flex:none}
+.chartbox .tip .r i.b,.chartbox .lg i.b{border-top-style:dashed}
+.chartbox .tip .r b{min-width:54px;text-align:right;font-variant-numeric:tabular-nums}
+.chartbox .tip .r span{color:var(--sub)}
+.chartbox .lg{display:flex;flex-wrap:wrap;gap:4px 6px;margin-top:10px}
+.chartbox .lg button{font:inherit;font-size:12px;display:inline-flex;align-items:center;gap:6px;border:1px solid transparent;
+background:transparent;color:var(--ink);border-radius:8px;padding:3px 8px;cursor:pointer}
+.chartbox .lg button:hover,.chartbox .lg button.on{border-color:var(--line);background:var(--chip)}
+.chartbox .lg button b{font-weight:600;font-variant-numeric:tabular-nums}
 </style></head>
 <body><div class="wrap">
 <header class="site"><a class="logo" href="index.html">投資手法の格付け</a>
@@ -318,7 +347,7 @@ footer{border-top:1px solid var(--line)}
 <h2>用語集</h2>
 <dl class="gl"><dt>最大下落</dt><dd>途中で一番減ったときの幅。初心者はまずここを見よう</dd><dt>勝率</dt><dd>利益で終わった取引の割合。勝率が低くても、勝ちが大きければ資産は増える</dd><dt>プロフィットファクター</dt><dd>利益の合計÷損失の合計。1を超えると、ここまでは利益が多い</dd><dt>損切り</dt><dd>損が広がる前に決めた値で売ること。どの手法も1回の損は資金の1%までに決めている</dd><dt>スリッページ</dt><dd>注文した値と実際の約定値のずれ。この検証では片道0.1%を差し引いている</dd><dt>移動平均線</dt><dd>過去N日の終値の平均をつないだ線。5日線は短期、25日線は中期の流れを表す</dd><dt>ゴールデンクロス</dt><dd>短い移動平均線が長い線を下から上に抜けること</dd><dt>RSI</dt><dd>上げ下げの勢いを0〜100で表す指標。低いほど売られすぎとされる</dd><dt>ボリンジャーバンド</dt><dd>平均からのばらつき（σ）で描く帯。-2σの外に出るのは珍しい動き</dd><dt>ATR</dt><dd>1日の値動きの平均的な大きさ。損切りの幅を決めるのに使う</dd><dt>一目均衡表</dt><dd>転換線・基準線・雲などで相場の状態を見る日本生まれの指標</dd><dt>出来高</dt><dd>その日に売買された株数。急に増えるのは注目が集まったサイン</dd><dt>窓（ギャップ）</dt><dd>前日の値幅から離れて始まり、チャートに空白ができること</dd><dt>モメンタム</dt><dd>最近よく上がった銘柄がしばらく上がり続けやすい、という考え方</dd><dt>ベンチマーク</dt><dd>比べる基準。ここでは日経225を買って放っておいた場合</dd><dt>フォワードテスト</dt><dd>未来の値を知らない状態で、毎日その場で判断を記録していく検証</dd><dt>生存者バイアス</dt><dd>今残っている銘柄だけで過去を調べると、成績がよく見えてしまう偏り</dd><dt>VWAP</dt><dd>その日の出来高で重みを付けた平均の約定値。デイトレの目安に使われる</dd><dt>ドローダウン</dt><dd>資産が直前の最高値からどれだけ減ったか</dd><dt>寄り付き</dt><dd>その日の最初の取引。この検証ではシグナルの翌営業日の寄り付きで約定する</dd></dl>
 
-<footer><p>仮想資金（各手法100万円）での検証記録です。実際の売買は一切していません。特定の銘柄や手法の売買をすすめるものではありません。過去の成績は将来の成績を約束しません。</p><p>最終更新：2026-11-26 17:25（平日の大引け後に自動で更新）</p></footer>
+<footer><p>仮想資金（各手法100万円）での検証記録です。実際の売買は一切していません。特定の銘柄や手法の売買をすすめるものではありません。過去の成績は将来の成績を約束しません。</p><p>最終更新：2026-11-26 17:30（平日の大引け後に自動で更新）</p></footer>
 </div><nav class="tabbar"><a href="index.html"><svg viewBox="0 0 24 24"><path d="M4 20V11M10 20V5M16 20v-6M21 20H3"/></svg>格付け</a><a href="methods.html"><svg viewBox="0 0 24 24"><path d="M5 4h11a3 3 0 0 1 3 3v13H8a3 3 0 0 1-3-3z"/><path d="M5 17a3 3 0 0 1 3-3h11"/></svg>手法</a><a href="records.html"><svg viewBox="0 0 24 24"><path d="M7 3h8l4 4v14H7z"/><path d="M15 3v4h4M10 12h6M10 16h6"/></svg>記録</a><a href="about.html" class=on><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg>ルール</a></nav>
 <script>
 document.querySelectorAll('.tabs,.seg').forEach(function(t){
@@ -347,5 +376,81 @@ document.querySelectorAll('.filters').forEach(function(f){
     });
   });
 });
+</script>
+
+<script>
+(function(){
+var NS='http://www.w3.org/2000/svg';
+function el(t,a,p){var e=document.createElementNS(NS,t);for(var k in a)e.setAttribute(k,a[k]);if(p)p.appendChild(e);return e;}
+function nice(r){var p=Math.pow(10,Math.floor(Math.log10(r))),f=r/p;return (f<=1?1:f<=2?2:f<=2.5?2.5:f<=5?5:10)*p;}
+function fv(d,v){if(v==null)return '-';if(d.mode==='log')return Math.round(v).toLocaleString()+'万円';
+  return (v>0?'+':v<0?'-':'')+Math.abs(v).toFixed(1)+'%';}
+function draw(box){
+  var d=box._d,plot=box.querySelector('.plot'),W=plot.clientWidth;if(!W||box._w===W)return;box._w=W;
+  var old=plot.querySelector('svg');if(old)old.remove();
+  var H=W<520?230:290,m={l:W<520?46:54,r:10,t:8,b:24},n=d.dates.length,log=d.mode==='log';
+  var all=[];d.series.forEach(function(s){s.v.forEach(function(v){if(v!=null)all.push(v)})});
+  var lo=Math.min.apply(null,all),hi=Math.max.apply(null,all),ticks=[];
+  if(log){lo*=0.85;hi*=1.15;[10,20,50,100,200,500,1000,2000,5000,10000,20000].forEach(function(t){if(t>=lo&&t<=hi)ticks.push(t)});}
+  else{lo=Math.min(lo,0);hi=Math.max(hi,0);var st=nice((hi-lo)/4||1);lo=Math.floor(lo/st)*st;hi=Math.ceil(hi/st)*st;
+    for(var t=lo;t<=hi+1e-9;t+=st)ticks.push(Math.round(t*100)/100);}
+  var f=log?Math.log:function(v){return v};
+  var x=function(i){return m.l+(W-m.l-m.r)*(n<2?0:i/(n-1))};
+  var y=function(v){return m.t+(H-m.t-m.b)*(1-(f(v)-f(lo))/(f(hi)-f(lo)))};
+  var svg=el('svg',{viewBox:'0 0 '+W+' '+H,width:W,height:H,'class':'lc',role:'img','aria-label':d.title});
+  plot.insertBefore(svg,plot.firstChild);
+  var base=log?100:0;
+  ticks.forEach(function(t){var yy=y(t);
+    el('line',{x1:m.l,x2:W-m.r,y1:yy,y2:yy,'class':t===base?'g0':'g'},svg);
+    var tx=el('text',{x:m.l-8,y:yy+4,'text-anchor':'end'},svg);
+    tx.textContent=log?(t>=10000?(t/10000)+'億':t+'万'):(t>0?'+':'')+t+'%';});
+  var k=Math.min(n,W<520?4:6),seen={};
+  for(var j=0;j<k;j++){var i=Math.round(j*(n-1)/Math.max(k-1,1));if(seen[d.xl[i]])continue;seen[d.xl[i]]=1;
+    var tx=el('text',{x:x(i),y:H-6,'text-anchor':j===0?'start':j===k-1?'end':'middle'},svg);tx.textContent=d.xl[i];}
+  var paths=[];
+  d.series.forEach(function(s,si){var p='',pen=false;
+    s.v.forEach(function(v,i){if(v==null){pen=false;return}p+=(pen?'L':'M')+x(i).toFixed(1)+','+y(v).toFixed(1);pen=true;});
+    var e=el('path',{d:p,'class':'s'+(s.b?' b':'')},svg);e.style.stroke=s.c;e.dataset.i=si;paths.push(e);});
+  paths.forEach(function(p){if(d.series[p.dataset.i].b)svg.appendChild(p)});
+  var xh=el('line',{y1:m.t,y2:H-m.b,'class':'xh',visibility:'hidden'},svg),dots=[];
+  d.series.forEach(function(s){var c=el('circle',{r:4.5,'class':'d',visibility:'hidden'},svg);c.style.fill=s.c;dots.push(c)});
+  var tip=box.querySelector('.tip');
+  function show(px){var i=Math.max(0,Math.min(n-1,Math.round((px-m.l)/(W-m.l-m.r)*(n-1))));
+    var xx=x(i);xh.setAttribute('x1',xx);xh.setAttribute('x2',xx);xh.setAttribute('visibility','visible');
+    d.series.forEach(function(s,si){var v=s.v[i];if(v==null){dots[si].setAttribute('visibility','hidden');return}
+      dots[si].setAttribute('cx',xx);dots[si].setAttribute('cy',y(v));dots[si].setAttribute('visibility','visible');});
+    tip.textContent='';var h=document.createElement('div');h.className='h';h.textContent=d.dates[i];tip.appendChild(h);
+    d.series.map(function(s,si){return [s.v[i],si]}).filter(function(a){return a[0]!=null})
+     .sort(function(a,b){return b[0]-a[0]}).forEach(function(a){var s=d.series[a[1]];
+      var r=document.createElement('div');r.className='r';var ic=document.createElement('i');if(s.b)ic.className='b';
+      ic.style.borderTopColor=s.c;var b=document.createElement('b');b.textContent=fv(d,a[0]);
+      var sp=document.createElement('span');sp.textContent=s.name;r.appendChild(ic);r.appendChild(b);r.appendChild(sp);tip.appendChild(r);});
+    tip.hidden=false;var tw=tip.offsetWidth;tip.style.left=(xx+14+tw>W?Math.max(0,xx-14-tw):xx+14)+'px';}
+  function hide(){xh.setAttribute('visibility','hidden');dots.forEach(function(c){c.setAttribute('visibility','hidden')});tip.hidden=true;}
+  var hit=el('rect',{x:m.l,y:0,width:W-m.l-m.r,height:H,fill:'transparent'},svg);
+  hit.addEventListener('pointermove',function(e){var r=svg.getBoundingClientRect();show(e.clientX-r.left)});
+  hit.addEventListener('pointerdown',function(e){var r=svg.getBoundingClientRect();show(e.clientX-r.left)});
+  hit.addEventListener('pointerleave',hide);
+  box._paths=paths;box._svg=svg;applyHl(box);
+}
+function applyHl(box){var h=box._hl;if(!box._svg)return;box._svg.classList.toggle('hl',h!=null);
+  box._paths.forEach(function(p){p.classList.toggle('on',String(h)===p.dataset.i)});
+  box.querySelectorAll('.lg button').forEach(function(b){b.classList.toggle('on',String(h)===b.dataset.i)});}
+document.querySelectorAll('.chartbox').forEach(function(box){
+  box._d=JSON.parse(box.querySelector('script[type="application/json"]').textContent);box._hl=null;box._lock=null;
+  var lg=box.querySelector('.lg'),d=box._d;
+  d.series.forEach(function(s,si){var b=document.createElement('button');b.type='button';b.dataset.i=si;
+    var ic=document.createElement('i');if(s.b)ic.className='b';ic.style.borderTopColor=s.c;
+    var nm=document.createElement('span');nm.textContent=s.name;var v=document.createElement('b');
+    var last=null;for(var i=s.v.length-1;i>=0;i--){if(s.v[i]!=null){last=s.v[i];break}}v.textContent=fv(d,last);
+    b.appendChild(ic);b.appendChild(nm);b.appendChild(v);
+    b.addEventListener('mouseenter',function(){if(box._lock==null){box._hl=si;applyHl(box)}});
+    b.addEventListener('mouseleave',function(){if(box._lock==null){box._hl=null;applyHl(box)}});
+    b.addEventListener('click',function(){box._lock=box._lock===si?null:si;box._hl=box._lock;applyHl(box)});
+    lg.appendChild(b);});
+  if(window.ResizeObserver)new ResizeObserver(function(){draw(box)}).observe(box.querySelector('.plot'));
+  draw(box);
+});
+})();
 </script>
 </body></html>
