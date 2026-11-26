@@ -52,6 +52,9 @@ img.chart{width:100%;max-width:100%;border:1px solid var(--line);border-radius:1
 .meth .card{margin:0}.meth .rule{font-size:13px;color:var(--sub);margin:4px 0 10px}
 .chip{display:inline-block;font-size:12px;background:var(--chip);border-radius:999px;padding:1px 10px;color:var(--sub)}
 .chip.day{background:#fdeee0;color:#9a4a0b}.chip.swing{background:#e4eef7;color:#1f4e79}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .chip.day{background:#3a2a1c;color:#f0b27a}
+:root:not([data-theme="light"]) .chip.swing{background:#1f2f40;color:#8db8e3}}
+:root[data-theme="dark"] .chip.day{background:#3a2a1c;color:#f0b27a}:root[data-theme="dark"] .chip.swing{background:#1f2f40;color:#8db8e3}
 td.name .chip{font-size:11px;padding:0 7px;margin-right:2px}
 .mini{width:100%;font-size:13px}.mini td,.mini th{padding:4px 6px}
 dl.gl dt{font-weight:700;margin-top:10px}dl.gl dd{margin:2px 0 0 0;color:var(--sub)}
