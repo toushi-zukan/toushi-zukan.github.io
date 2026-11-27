@@ -320,6 +320,9 @@ transition:border-color .15s,transform .15s}
 .vd-card small{display:block;opacity:.65;font-size:11px}
 .vd-card{min-width:0}
 @media(max-width:520px){.vd-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:8px}}
+.zk-steps{margin:4px 0 8px;padding-left:1.4em}.zk-steps li{margin:6px 0;line-height:1.7}
+.zk-money{background:var(--bg);border-radius:10px;padding:10px 12px;line-height:1.7}.zk-money .k{display:block;font-size:12px;color:var(--sub);margin-bottom:2px}
+.zk-gl{margin:4px 0}.zk-gl dt{font-weight:700;margin-top:10px}.zk-gl dd{margin:2px 0 0;line-height:1.7;color:var(--ink)}
 .zk-video{display:block;width:100%;max-width:320px;aspect-ratio:9/16;margin:4px auto 0;border-radius:12px;background:#000}
 .zk-caution{margin:4px 0;padding-left:1.2em}.zk-caution li{margin:4px 0;font-size:14px}
 .zk-src{font-size:14px;margin:10px 0}.zk-src .k{display:block;font-size:11px;color:var(--sub)}
@@ -349,15 +352,17 @@ margin-top:24px;font-size:13px}
 <div class="zk-sec"><h2>どんな手法？</h2><p>その日の平均約定値（VWAP）より上で動く銘柄が、VWAPまで下げて反発したら買い、その日のうちに売ります。</p>
 <div class="gb"><div><span class="k">考え方の上で得意な相場</span>一日中しっかりした銘柄</div><div><span class="k">考え方の上で苦手な相場</span>午後に崩れる日</div></div>
 <p class="zk-src"><span class="k">出どころ</span>デイトレードの定番（寄り付きの値幅・VWAP・前日高値・窓埋め）</p></div>
+<div class="zk-sec"><h2>売買のルール（順番に）</h2><ol class="zk-steps"><li>寄りからVWAP上を推移→VWAPまで押して5分足陽線で反発したら買い</li><li>当日高値の手前で利確</li><li>5分足終値がVWAP-0.5%割れで損切り</li></ol>
+<p class="zk-money"><span class="k">100万円の場合</span>買う合図が出た銘柄を、1銘柄あたり資金の5分の1（100万円なら20万円）までで買い、その日のうちに売ります。損切りまで下がったときの損が資金の1%になるように、買う株数を減らすことがあります。</p>
+<p class="note">ルールは検証を始める前に決めたもので、成績を見て途中で変えることはしません。合図はその時点で分かっている値段だけで判断し、売買はそのあとの値段で行う前提です。売買のたびに、値段を少し不利にして計算しています（手数料などのかわり）。</p></div>
+<div class='zk-sec'><h2>ことばの説明</h2><dl class='zk-gl'><dt>VWAP</dt><dd>その日の売買の値段を、売買の量で重みをつけて平均したもの。その日に売買した人の平均の買値の目安です。</dd><dt>押し目</dt><dd>上がっている株が、一時的に少し下がったところ。「押し目買い」は、流れが続くと見てそこで買うことです。</dd><dt>移動平均（〜日線・平均線）</dt><dd>過去◯日の終値の平均を毎日つなげた線。たとえば25日線は、直近25日の終値の平均です。株価がこの線より上なら上向き、下なら下向きの流れと見ることが多いです。</dd><dt>逆張り・順張り</dt><dd>下がった株が戻ると見て買うのが「逆張り」、上がっている流れに乗って買うのが「順張り」です。</dd><dt>寄り・引け・大引け</dt><dd>「寄り（寄り付き）」はその日最初の売買、「引け」はその日最後の売買。「大引け」は午後の取引の終わり（15時30分）です。</dd><dt>陽線・陰線（ローソク足）</dt><dd>1日の値動きを1本の棒で表したものを「ローソク足」と言います。始まりより高く終わった日を「陽線」、安く終わった日を「陰線」と呼びます。棒から上下に出た細い線（ひげ）は、その日の高値・安値です。</dd><dt>利確</dt><dd>「利益確定」の略。値上がりした株を売って、利益を確かなものにすることです。</dd><dt>上抜け・下抜け（割れ）</dt><dd>線や値段を、下から上に超えるのが「上抜け」、上から下に割り込むのが「下抜け（割れ）」です。</dd><dt>損切り</dt><dd>買った株が決めた値段まで下がったら、損を受け入れて売ること。損が大きくなりすぎるのを防ぎます。</dd></dl></div>
 
 <div class="zk-sec"><h2>成績</h2><div class='tbl'><table class=mini><tr><th class=l>期間</th><th>格付け</th><th>増減</th><th>最大の下げ</th></tr><tr><td class=l>記録（2026年11月〜）</td><td><span class="grade gB">B</span></td><td class='neg'>-1.4%</td><td>-1.5%</td></tr><tr><td class=l>直近60日</td><td>-</td><td class='neg'>-3.4%</td><td>-3.6%</td></tr></table></div><div class="chartbox"><div class="ct">記録：仮想資金100万円からの増減</div><div class="cs">2026年11月から毎日記録。触るとその日の値が出ます</div><div class="plot"><div class="tip" hidden></div></div><div class="lg"></div><script type="application/json">{"title": "記録：仮想資金100万円からの増減", "dates": ["2026/11/06", "2026/11/09", "2026/11/10", "2026/11/11", "2026/11/12", "2026/11/13", "2026/11/16", "2026/11/17", "2026/11/18", "2026/11/19", "2026/11/20", "2026/11/24", "2026/11/25"], "xl": ["11/6", "11/9", "11/10", "11/11", "11/12", "11/13", "11/16", "11/17", "11/18", "11/19", "11/20", "11/24", "11/25"], "series": [{"name": "VWAP押し目買い", "v": [0.0, -0.61, -0.61, -0.49, 0.14, -0.06, -0.06, -1.09, -1.33, -1.33, -1.33, -1.38, -1.38], "b": false, "c": "var(--s1)"}, {"name": "日経225放置（基準）", "v": [0.0, 0.97, 4.08, 5.5, 4.71, 5.17, 2.87, 1.52, 1.73, 2.41, -2.59, 0.84, -1.67], "b": true, "c": "var(--sb)"}], "mode": "pct"}</script></div>
 <p class="note">過去の成績は、その時点で日経225に採用されていた銘柄で計算しています。上場廃止になった一部の銘柄は株価が手に入らず含まれていません。
 配当は受け取り、税金は考えていません。過去の成績は将来の成績を約束しません。</p></div>
-<div class="zk-sec"><h2>正確なルール</h2><p class="rule">寄りからVWAP上を推移→VWAPまで押して5分足陽線で反発したら買い／当日高値の手前で利確／5分足終値がVWAP-0.5%割れで損切り</p>
-<p class="note">ルールは検証を始める前に決めたもので、成績を見て途中で変えることはしません。</p></div>
 <div class='zk-pager'><a href='m17.html'>‹ No.17 ORB</a><a href='index.html'>図鑑のトップ</a><a href='m19.html'>No.19 前日高値ブレイク ›</a></div>
 
-<footer><p>仮想資金（各手法100万円）での検証記録です。実際の売買は一切していません。特定の銘柄や手法の売買をすすめるものではありません。過去の成績は将来の成績を約束しません。</p><p>最終更新：2026-11-27 21:08（平日の大引け後に自動で更新）</p></footer>
+<footer><p>仮想資金（各手法100万円）での検証記録です。実際の売買は一切していません。特定の銘柄や手法の売買をすすめるものではありません。過去の成績は将来の成績を約束しません。</p><p>最終更新：2026-11-27 21:22（平日の大引け後に自動で更新）</p></footer>
 </div><nav class="tabbar"><a href="index.html" class=on><svg viewBox="0 0 24 24"><path d="M5 4h11a3 3 0 0 1 3 3v13H8a3 3 0 0 1-3-3z"/><path d="M5 17a3 3 0 0 1 3-3h11"/></svg>図鑑</a><a href="videos.html"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M10 9l5 3-5 3z"/></svg>動画</a><a href="ranking.html"><svg viewBox="0 0 24 24"><path d="M4 20V11M10 20V5M16 20v-6M21 20H3"/></svg>順位</a><a href="records.html"><svg viewBox="0 0 24 24"><path d="M7 3h8l4 4v14H7z"/><path d="M15 3v4h4M10 12h6M10 16h6"/></svg>記録</a><a href="about.html"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg>ルール</a></nav>
 <script>
 document.querySelectorAll('.tabs,.seg').forEach(function(t){
