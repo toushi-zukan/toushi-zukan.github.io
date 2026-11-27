@@ -255,6 +255,13 @@ svg.lc text{fill:var(--sub);font-size:11px;font-family:inherit;font-variant-nume
 svg.lc path.s{fill:none;stroke-width:2;stroke-linejoin:round;stroke-linecap:round;transition:opacity .15s}
 svg.lc path.s.b{stroke-width:2.5;stroke-dasharray:5 4}
 svg.lc.hl path.s:not(.on){opacity:.12}
+svg.lc line.evl{stroke:var(--sub);stroke-width:1;stroke-dasharray:2 3;opacity:.55}
+svg.lc circle.evc{fill:var(--card);stroke:var(--sub);stroke-width:1}
+svg.lc text.evn{fill:var(--ink);font-size:10px;font-weight:700}
+.chartbox .tip .ev{font-weight:700;margin-bottom:4px;white-space:nowrap}
+.chartbox ol.evl{margin:10px 0 0;padding:10px 0 0 1.6em;border-top:1px solid var(--line);font-size:12px;columns:2 320px;column-gap:24px}
+.chartbox ol.evl li{margin:0 0 6px;break-inside:avoid;line-height:1.55}
+.chartbox ol.evl b{display:block;font-weight:700}.chartbox ol.evl span{color:var(--sub)}
 svg.lc .xh{stroke:var(--sub);stroke-width:1;opacity:.6}
 svg.lc circle.d{stroke:var(--card);stroke-width:2}
 .chartbox .tip{position:absolute;top:0;pointer-events:none;background:var(--card);border:1px solid var(--line);
@@ -357,12 +364,12 @@ margin-top:24px;font-size:13px}
 <p class="note">ルールは検証を始める前に決めたもので、成績を見て途中で変えることはしません。合図はその時点で分かっている値段だけで判断し、売買はそのあとの値段で行う前提です。売買のたびに、値段を少し不利にして計算しています（手数料などのかわり）。</p></div>
 <div class='zk-sec'><h2>ことばの説明</h2><dl class='zk-gl'><dt>出来高</dt><dd>その日に売買された株の数。いつもより多いと、注目が集まった・大きなお金が動いた合図とされます。</dd><dt>上抜け・下抜け（割れ）</dt><dd>線や値段を、下から上に超えるのが「上抜け」、上から下に割り込むのが「下抜け（割れ）」です。</dd><dt>寄り・引け・大引け</dt><dd>「寄り（寄り付き）」はその日最初の売買、「引け」はその日最後の売買。「大引け」は午後の取引の終わり（15時30分）です。</dd><dt>利確</dt><dd>「利益確定」の略。値上がりした株を売って、利益を確かなものにすることです。</dd><dt>損切り</dt><dd>買った株が決めた値段まで下がったら、損を受け入れて売ること。損が大きくなりすぎるのを防ぎます。</dd></dl></div>
 
-<div class="zk-sec"><h2>成績</h2><div class='tbl'><table class=mini><tr><th class=l>期間</th><th>格付け</th><th>増減</th><th>最大の下げ</th></tr><tr><td class=l>記録（2026年11月〜）</td><td><span class="grade gB">B</span></td><td class='neg'>-0.6%</td><td>-0.6%</td></tr><tr><td class=l>直近60日</td><td>-</td><td class='pos'>+0.3%</td><td>-2.5%</td></tr></table></div><div class="chartbox"><div class="ct">記録：仮想資金100万円からの増減</div><div class="cs">2026年11月から毎日記録。触るとその日の値が出ます</div><div class="plot"><div class="tip" hidden></div></div><div class="lg"></div><script type="application/json">{"title": "記録：仮想資金100万円からの増減", "dates": ["2026/11/06", "2026/11/09", "2026/11/10", "2026/11/11", "2026/11/12", "2026/11/13", "2026/11/16", "2026/11/17", "2026/11/18", "2026/11/19", "2026/11/20", "2026/11/24", "2026/11/25"], "xl": ["11/6", "11/9", "11/10", "11/11", "11/12", "11/13", "11/16", "11/17", "11/18", "11/19", "11/20", "11/24", "11/25"], "series": [{"name": "前日高値ブレイク", "v": [0.0, -0.27, -0.24, 0.05, -0.28, -0.2, -0.2, -0.2, 0.03, -0.57, -0.57, -0.53, -0.6], "b": false, "c": "var(--s1)"}, {"name": "日経225放置（基準）", "v": [0.0, 0.97, 4.08, 5.5, 4.71, 5.17, 2.87, 1.52, 1.73, 2.41, -2.59, 0.84, -1.67], "b": true, "c": "var(--sb)"}], "mode": "pct"}</script></div>
+<div class="zk-sec"><h2>成績</h2><div class='tbl'><table class=mini><tr><th class=l>期間</th><th>格付け</th><th>増減</th><th>最大の下げ</th></tr><tr><td class=l>記録（2026年11月〜）</td><td><span class="grade gB">B</span></td><td class='neg'>-0.6%</td><td>-0.6%</td></tr><tr><td class=l>直近60日</td><td>-</td><td class='pos'>+0.3%</td><td>-2.5%</td></tr></table></div><div class="chartbox"><div class="ct">記録：仮想資金100万円からの増減</div><div class="cs">2026年11月から毎日記録。触るとその日の値が出ます</div><div class="plot"><div class="tip" hidden></div></div><div class="lg"></div><script type="application/json">{"title": "記録：仮想資金100万円からの増減", "dates": ["2026/11/06", "2026/11/09", "2026/11/10", "2026/11/11", "2026/11/12", "2026/11/13", "2026/11/16", "2026/11/17", "2026/11/18", "2026/11/19", "2026/11/20", "2026/11/24", "2026/11/25"], "xl": ["11/6", "11/9", "11/10", "11/11", "11/12", "11/13", "11/16", "11/17", "11/18", "11/19", "11/20", "11/24", "11/25"], "series": [{"name": "前日高値ブレイク", "v": [0.0, -0.27, -0.24, 0.05, -0.28, -0.2, -0.2, -0.2, 0.03, -0.57, -0.57, -0.53, -0.6], "b": false, "c": "var(--s1)"}, {"name": "日経225放置（基準）", "v": [0.0, 0.97, 4.08, 5.5, 4.71, 5.17, 2.87, 1.52, 1.73, 2.41, -2.59, 0.84, -1.67], "b": true, "c": "var(--sb)"}], "mode": "pct", "ev": []}</script></div>
 <p class="note">過去の成績は、その時点で日経225に採用されていた銘柄で計算しています。上場廃止になった一部の銘柄は株価が手に入らず含まれていません。
 配当は受け取り、税金は考えていません。過去の成績は将来の成績を約束しません。</p></div>
 <div class='zk-pager'><a href='m18.html'>‹ No.18 VWAP押し目</a><a href='index.html'>図鑑のトップ</a><a href='m20.html'>No.20 窓埋め ›</a></div>
 
-<footer><p>仮想資金（各手法100万円）での検証記録です。実際の売買は一切していません。特定の銘柄や手法の売買をすすめるものではありません。過去の成績は将来の成績を約束しません。</p><p>最終更新：2026-11-27 21:22（平日の大引け後に自動で更新）</p></footer>
+<footer><p>仮想資金（各手法100万円）での検証記録です。実際の売買は一切していません。特定の銘柄や手法の売買をすすめるものではありません。過去の成績は将来の成績を約束しません。</p><p>最終更新：2026-11-27 21:30（平日の大引け後に自動で更新）</p></footer>
 </div><nav class="tabbar"><a href="index.html" class=on><svg viewBox="0 0 24 24"><path d="M5 4h11a3 3 0 0 1 3 3v13H8a3 3 0 0 1-3-3z"/><path d="M5 17a3 3 0 0 1 3-3h11"/></svg>図鑑</a><a href="videos.html"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M10 9l5 3-5 3z"/></svg>動画</a><a href="ranking.html"><svg viewBox="0 0 24 24"><path d="M4 20V11M10 20V5M16 20v-6M21 20H3"/></svg>順位</a><a href="records.html"><svg viewBox="0 0 24 24"><path d="M7 3h8l4 4v14H7z"/><path d="M15 3v4h4M10 12h6M10 16h6"/></svg>記録</a><a href="about.html"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg>ルール</a></nav>
 <script>
 document.querySelectorAll('.tabs,.seg').forEach(function(t){
@@ -420,8 +427,14 @@ function draw(box){
     var tx=el('text',{x:m.l-8,y:yy+4,'text-anchor':'end'},svg);
     tx.textContent=log?(t>=10000?(t/10000)+'億':t+'万'):(t>0?'+':'')+t+'%';});
   var k=Math.min(n,W<520?4:6),seen={};
+  if(log){var yb=[];for(var i=1;i<n;i++)if(d.xl[i]!==d.xl[i-1])yb.push(i);var stp=Math.ceil(yb.length/(W<520?5:10))||1;
+    yb.forEach(function(i,q){if(q%stp)return;var xx=x(i);el('line',{x1:xx,x2:xx,y1:H-m.b,y2:H-m.b+4,'class':'g0'},svg);
+      var tx=el('text',{x:xx,y:H-6,'text-anchor':'middle'},svg);tx.textContent=d.xl[i];});k=0;}
   for(var j=0;j<k;j++){var i=Math.round(j*(n-1)/Math.max(k-1,1));if(seen[d.xl[i]])continue;seen[d.xl[i]]=1;
     var tx=el('text',{x:x(i),y:H-6,'text-anchor':j===0?'start':j===k-1?'end':'middle'},svg);tx.textContent=d.xl[i];}
+  var evs=d.ev||[];
+  evs.forEach(function(e,k){var xx=x(e.i);el('line',{x1:xx,x2:xx,y1:m.t+16,y2:H-m.b,'class':'evl'},svg);
+    el('circle',{cx:xx,cy:m.t+8,r:8,'class':'evc'},svg);var tx=el('text',{x:xx,y:m.t+11.5,'text-anchor':'middle','class':'evn'},svg);tx.textContent=k+1;});
   var paths=[];
   d.series.forEach(function(s,si){var p='',pen=false;
     s.v.forEach(function(v,i){if(v==null){pen=false;return}p+=(pen?'L':'M')+x(i).toFixed(1)+','+y(v).toFixed(1);pen=true;});
@@ -435,6 +448,8 @@ function draw(box){
     d.series.forEach(function(s,si){var v=s.v[i];if(v==null){dots[si].setAttribute('visibility','hidden');return}
       dots[si].setAttribute('cx',xx);dots[si].setAttribute('cy',y(v));dots[si].setAttribute('visibility','visible');});
     tip.textContent='';var h=document.createElement('div');h.className='h';h.textContent=d.dates[i];tip.appendChild(h);
+    var near=null,nd=1e9;evs.forEach(function(e,k){var dd=Math.abs(x(e.i)-xx);if(dd<=10&&dd<nd){nd=dd;near=[e,k]}});
+    if(near){var ee=document.createElement('div');ee.className='ev';ee.textContent=(near[1]+1)+'. '+near[0].t;tip.appendChild(ee);}
     d.series.map(function(s,si){return [s.v[i],si]}).filter(function(a){return a[0]!=null})
      .sort(function(a,b){return b[0]-a[0]}).forEach(function(a){var s=d.series[a[1]];
       var r=document.createElement('div');r.className='r';var ic=document.createElement('i');if(s.b)ic.className='b';
